@@ -1,0 +1,159 @@
+/* ===== Stories rail ===== */
+.stories-rail {
+  display: flex;
+  gap: 18px;
+  padding: 4px 0 24px;
+  margin-bottom: 8px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 24px;
+}
+
+.story-stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 64px;
+}
+
+.story-stamp__ring {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* stamp-like dashed gold ring for unseen stories */
+  background: conic-gradient(var(--gold) 0deg 355deg, transparent 355deg);
+  padding: 3px;
+}
+
+.story-stamp__ring--seen {
+  background: var(--rule);
+}
+
+.story-stamp__ring--add {
+  background: var(--rule);
+}
+
+.story-stamp__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--paper);
+  background: var(--paper);
+}
+
+.story-stamp__plus {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--paper);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--paper);
+}
+
+.story-stamp__label {
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 64px;
+}
+
+/* ===== Story viewer modal ===== */
+.story-modal {
+  position: fixed;
+  inset: 0;
+  background: #15130f;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-modal__progress {
+  display: flex;
+  gap: 4px;
+  padding: 10px 12px 0;
+}
+
+.story-modal__bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+
+.story-modal__bar--filled {
+  background: var(--gold);
+}
+
+.story-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.story-modal__author {
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.story-modal__close {
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.story-modal__stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-modal__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.story-modal__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.story-modal__nav--prev {
+  left: 0;
+}
+
+.story-modal__nav--next {
+  right: 0;
+}
